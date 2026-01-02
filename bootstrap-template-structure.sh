@@ -11,18 +11,24 @@ DIRS=(
   ".github"
   ".github/workflows"
   ".github/ISSUE_TEMPLATE"
+  "scripts"
 )
 
 # Files to create (empty placeholders only)
 FILES=(
   "README.md"
+  "LICENSE"
+  ".gitignore"
   ".pre-commit-config.yaml"
+  ".pymarkdown.json"
   "docs/ai/CONTEXT.md"
   "docs/requirements.md"
-  ".github/workflows/ci.yml"
+  "docs/ci-and-precommit.md"
+  ".github/workflows/ci.yaml"
   ".github/pull_request_template.md"
   ".github/ISSUE_TEMPLATE/feature_request.yml"
   ".github/ISSUE_TEMPLATE/bug_report.yml"
+  "scripts/run-precommit.sh"
 )
 
 echo "==> Creating directory structure (no overwrite)"
