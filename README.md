@@ -67,9 +67,15 @@ across all AI-assisted development work.
 
 ## ⚙️ How This Repository Works
 
+### Understanding the Framework Structure
+
+This repository serves as both:
+1. **A GitHub Template**: Use it to create new repositories with the framework
+2. **A Working Framework**: Once created, it provides governance and quality enforcement
+
 ### 1. Template Structure
 
-When you use this framework, you get:
+When you use this template, you get a complete framework with:
 
 | Component | Status | Description |
 |-----------|--------|-------------|
@@ -77,6 +83,58 @@ When you use this framework, you get:
 | ✅ Security Enforcement | Included | Strict `.gitignore` policies and pre-commit hooks |
 | ✅ Quality Gates | Included | Automated formatting, linting, and safety checks |
 | ✅ Consistent Standards | Included | Bash, Python, YAML, and JSON formatting rules |
+| ✅ CI/CD Pipeline | Included | Automated testing and quality checks on every PR |
+| ✅ Issue & PR Templates | Included | Structured templates for bug reports and features |
+| ✅ Helper Scripts | Included | Pre-commit wrapper and secret detection |
+
+### File Relationships and Workflow
+
+**Core Governance Files**:
+
+```text
+docs/ai/CONTEXT.md (Authoritative)
+    ↓
+    ├─→ Defines AI agent behavior standards
+    ├─→ Referenced by: README.md, scripts, CI
+    └─→ Must be followed by all AI tools
+
+docs/requirements.md (Project Contract)
+    ↓
+    ├─→ Defines project-specific requirements
+    ├─→ Maps to acceptance criteria
+    └─→ Updated before implementation
+
+README.md (User Documentation)
+    ↓
+    ├─→ Human-readable project overview
+    ├─→ References CONTEXT.md standards
+    └─→ Provides usage examples
+```
+
+**Quality Enforcement Chain**:
+
+```text
+Developer/AI Agent
+    ↓
+    Makes changes
+    ↓
+    Runs: ./scripts/run-precommit.sh
+    ↓
+    Pre-commit hooks execute:
+    ├─→ Formatting (Ruff, shfmt)
+    ├─→ Linting (ShellCheck, PyMarkdown)
+    ├─→ Secret detection (detect-secrets.sh)
+    └─→ Safety checks (private keys, merge conflicts)
+    ↓
+    If passes → Commit succeeds
+    If fails → Commit blocked, review artifacts/pre-commit.log
+    ↓
+    Push to GitHub
+    ↓
+    CI runs same checks (cannot be bypassed)
+    ↓
+    If CI passes → PR can be merged
+```
 
 ### 2. AI Agent Workflow
 
@@ -167,7 +225,30 @@ Documentation in this repository serves as **executable instructions** for AI ag
 | `docs/ai/CONTEXT.md` | Mandatory AI behavior standards | AI agents (authoritative) | ✅ Required |
 | `docs/requirements.md` | Project requirements and acceptance criteria | AI agents, developers | ✅ Required |
 | `docs/ci-and-precommit.md` | Quality enforcement mechanisms | Developers, operators | ✅ Required |
+| `docs/governance/` | Project-specific governance documents | All stakeholders | ⚠️ Optional |
 | `README.md` | Project overview and usage | All stakeholders | ✅ Required |
+
+**Documentation Hierarchy**:
+
+1. **`docs/ai/CONTEXT.md`** is **authoritative** for AI agents
+   - Defines mandatory behavior standards
+   - Referenced by all other documentation
+   - Must be followed without exception
+
+2. **`docs/requirements.md`** defines the project contract
+   - Maps requirements to acceptance criteria
+   - Must be updated before implementation
+   - Guides AI agent development work
+
+3. **`README.md`** provides human-readable guidance
+   - Explains how to use the framework
+   - Documents configuration and usage
+   - References CONTEXT.md for AI agent instructions
+
+4. **`docs/governance/`** is for project-specific governance
+   - Empty by default
+   - Add custom governance documents as needed
+   - Examples: coding standards, review processes, etc.
 
 #### Documentation Requirements
 
@@ -210,12 +291,16 @@ Per `docs/ai/CONTEXT.md`, all projects must include:
 
 ## 🏗️ High-Level Architecture Overview
 
+<<<<<<< HEAD
 <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px;">
   <div style="flex: 0 0 25%;">
     <img src="https://chrispaquin.com/wp-content/uploads/2026/01/framework-flow.png"
          alt="Nobby the Robot" width="60%" align="center">
   </div>
 
+=======
+<img src="architecture-diagram.png" alt="GitHub AI Engineering Framework Architecture" width="100%">
+>>>>>>> c38cc50 (Enhance README with comprehensive template workflow documentation)
 
 **Key Components**:
 
@@ -228,9 +313,34 @@ Per `docs/ai/CONTEXT.md`, all projects must include:
 
 ## 🚀 Installation
 
-### Step 1: Use This Framework
+### How This Template Works
 
-- [ ] Click **"Use this template"** on GitHub to create a new repository from this framework
+This is a **GitHub Template Repository**. When you use it, GitHub creates a new
+repository with all the files from this template, giving you a complete
+framework for AI-assisted development with governance, security, and quality
+enforcement built-in.
+
+**Template Workflow**:
+
+1. **Create Repository**: Use GitHub's "Use this template" button
+2. **Clone & Setup**: Clone your new repo and set up pre-commit
+3. **Customize**: Populate project-specific files and documentation
+4. **Start Developing**: Begin using the framework with AI agents
+
+### Step 1: Use This Template
+
+- [ ] Click **"Use this template"** on GitHub
+- [ ] Choose a repository name and description
+- [ ] Select public or private visibility
+- [ ] Click **"Create repository from template"**
+
+This creates a new repository with all framework files:
+- ✅ Directory structure (`docs/`, `.github/`, `scripts/`)
+- ✅ Configuration files (`.pre-commit-config.yaml`, `.gitignore`, etc.)
+- ✅ Documentation templates (`CONTEXT.md`, `requirements.md`)
+- ✅ CI/CD workflows (`.github/workflows/ci.yaml`)
+- ✅ Helper scripts (`run-precommit.sh`, `detect-secrets.sh`)
+- ✅ Issue and PR templates
 
 ### Step 2: Clone Your New Repository
 
@@ -250,21 +360,66 @@ pre-commit install
 
 - [ ] Pre-commit is installed
 - [ ] Pre-commit hooks are installed
-- [ ] Run `pre-commit run --all-files` to verify setup
+- [ ] Run `./scripts/run-precommit.sh` to verify setup
 
 ### Step 4: Populate Project-Specific Files
 
+**Required Customization**:
+
 - [ ] **`docs/requirements.md`**: Define your project's requirements and acceptance criteria
+  - Use the template structure provided
+  - Document functional and non-functional requirements
+  - Define acceptance criteria for each requirement
 - [ ] **`.env.example`**: Create an example environment file documenting required variables
+  - List all environment variables your project needs
+  - Use placeholder values (e.g., `YOUR_API_KEY_HERE`)
+  - Document what each variable is for
 - [ ] **`README.md`**: Update with your project-specific information
+  - Replace framework description with your project description
+  - Update architecture diagram (if using image)
+  - Customize installation and usage sections
+
+**Optional Customization**:
+
+- [ ] **`docs/governance/`**: Add project-specific governance documents
+- [ ] **`docs/runbook.md`**: Create operational runbook (if applicable)
+- [ ] **Issue Templates**: Customize `.github/ISSUE_TEMPLATE/` files if needed
+- [ ] **PR Template**: Customize `.github/pull_request_template.md` if needed
 
 ### Step 5: Bootstrap Structure (Optional)
 
-If you need to recreate the template structure:
+The `bootstrap-template-structure.sh` script recreates the template's directory
+structure and empty placeholder files. Use it if:
+
+- You accidentally deleted framework files
+- You want to add the structure to an existing repository
+- You need to restore the template structure
+
+**What It Creates**:
+
+**Directories**:
+- `docs/`, `docs/ai/`, `docs/governance/`
+- `.github/`, `.github/workflows/`, `.github/ISSUE_TEMPLATE/`
+- `scripts/`
+
+**Files** (empty placeholders):
+- `README.md`, `LICENSE`, `.gitignore`
+- `.pre-commit-config.yaml`, `.pymarkdown.json`
+- `docs/ai/CONTEXT.md`, `docs/requirements.md`, `docs/ci-and-precommit.md`
+- `.github/workflows/ci.yaml`
+- `.github/pull_request_template.md`
+- `.github/ISSUE_TEMPLATE/feature_request.yml`
+- `.github/ISSUE_TEMPLATE/bug_report.yml`
+- `scripts/run-precommit.sh`, `scripts/detect-secrets.sh`
+
+**Usage**:
 
 ```bash
 ./bootstrap-template-structure.sh
 ```
+
+**Note**: The script will **not overwrite** existing files—it only creates missing
+files and directories.
 
 ---
 
@@ -306,6 +461,45 @@ Please follow the standards in docs/ai/CONTEXT.md and implement
 the requirements in docs/requirements.md. Ensure pre-commit passes
 before completing the work.
 ```
+
+### Understanding the Artifacts Directory
+
+The `artifacts/` directory is automatically created and ignored by git. It
+contains:
+
+- **`pre-commit.log`**: Detailed output from pre-commit runs
+  - Created by `scripts/run-precommit.sh`
+  - Contains full hook output for debugging
+  - Useful for AI agents to review failures
+  - Uploaded as CI artifact on failure
+
+**Note**: The `artifacts/` directory is in `.gitignore` and should never be
+committed.
+
+### Using Issue Templates
+
+The framework includes structured issue templates:
+
+**Bug Reports** (`.github/ISSUE_TEMPLATE/bug_report.yml`):
+- Requires: Summary, reproduction steps, expected/actual behavior, environment
+- Automatically labels issues as "bug"
+
+**Feature Requests** (`.github/ISSUE_TEMPLATE/feature_request.yml`):
+- Requires: Problem statement, desired outcome, acceptance criteria
+- Automatically labels issues as "enhancement"
+- Encourages requirement documentation before implementation
+
+### Using the Pull Request Template
+
+The PR template (`.github/pull_request_template.md`) ensures:
+
+- ✅ Requirements coverage is documented
+- ✅ Acceptance criteria are verified
+- ✅ Security and safety checks are confirmed
+- ✅ Testing evidence is provided
+- ✅ Documentation is updated
+
+This template enforces the discipline required by `docs/ai/CONTEXT.md` Section 10.
 
 ### Running Pre-commit Checks
 
@@ -384,11 +578,33 @@ If secrets are detected, the commit will be blocked. Use example placeholders li
 
 ### CI/CD Configuration
 
-CI workflows are defined in `.github/workflows/ci.yaml`. The workflow:
+CI workflows are defined in `.github/workflows/ci.yaml`. The workflow consists
+of two jobs that run sequentially:
 
-- ✅ Runs pre-commit checks on all PRs and pushes
-- ✅ Runs unit tests (if `tests/` directory exists)
-- ✅ Uploads pre-commit logs as artifacts on failure
+**Job 1: Pre-commit Checks** (runs first):
+
+- ✅ Runs on all pull requests and pushes to `main`
+- ✅ Executes all pre-commit hooks (formatting, linting, secret detection)
+- ✅ Uses Python 3.11 on Ubuntu latest
+- ✅ If checks fail, generates detailed log via `scripts/run-precommit.sh`
+- ✅ Uploads pre-commit log as artifact for review (only on failure)
+
+**Job 2: Unit Tests** (runs after pre-commit passes):
+
+- ✅ Only runs if pre-commit job succeeds
+- ✅ Conditionally installs dependencies:
+  - Installs from `requirements.txt` if present
+  - Installs from `requirements-dev.txt` if present
+  - Installs `pytest` only if `tests/` directory exists
+- ✅ Runs `pytest` if tests exist, otherwise skips gracefully
+- ✅ Ensures code quality before running tests
+
+**Key Features**:
+
+- 🔒 **Cannot be bypassed**: All checks run in CI, preventing skipped local checks
+- 📋 **Artifact logging**: Failed pre-commit runs generate downloadable logs
+- ⚡ **Efficient**: Tests only run if pre-commit passes
+- 🔄 **Consistent**: Same checks run locally and in CI
 
 ### Markdown Configuration
 
