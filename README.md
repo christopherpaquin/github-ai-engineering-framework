@@ -1,19 +1,28 @@
 # 🤖 GitHub AI Engineering Framework
 
-<img src="https://chrispaquin.com/wp-content/uploads/2026/01/Nobby-the-robot.png" alt="Nobby the Robot" width="50%" align="left">
-
-> A **governance-first** GitHub-centric framework for AI-assisted software
-> engineering with enforced standards, pre-commit, CI, and explicit operational
-> contracts.
-> This framework enforces security, documentation consistency, and quality through
-> automated checks and explicit AI agent instructions.
-
-![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
-![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)
-![Tested on](https://img.shields.io/badge/tested%20on-RHEL%209%2F10%20%7C%20Ubuntu%2022.04-green.svg)
-![Security](https://img.shields.io/badge/security-hardened-red.svg)
-![Governance](https://img.shields.io/badge/governance-documentation%20driven-purple.svg)
-![AI-Governed](https://img.shields.io/badge/AI-Governed-critical)
+<div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px;">
+  <div style="flex: 0 0 25%;">
+    <img src="https://chrispaquin.com/wp-content/uploads/2026/01/Nobby-the-robot.png"
+         alt="Nobby the Robot" width="100%" align="left">
+  </div>
+  <div style="flex: 1;">
+    <blockquote>
+      <p>A <strong>governance-first</strong> GitHub-centric framework for
+      AI-assisted software engineering with enforced standards, pre-commit, CI,
+      and explicit operational contracts.</p>
+      <p>This framework enforces security, documentation consistency, and
+      quality through automated checks and explicit AI agent instructions.</p>
+    </blockquote>
+    <p>
+      <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License">
+      <img src="https://img.shields.io/badge/python-3.11%2B-blue.svg" alt="Python">
+      <img src="https://img.shields.io/badge/tested%20on-RHEL%209%2F10%20%7C%20Ubuntu%2022.04-green.svg" alt="Tested on">
+      <img src="https://img.shields.io/badge/security-hardened-red.svg" alt="Security">
+      <img src="https://img.shields.io/badge/governance-documentation%20driven-purple.svg" alt="Governance">
+      <img src="https://img.shields.io/badge/AI-Governed-critical" alt="AI-Governed">
+    </p>
+  </div>
+</div>
 
 ---
 
