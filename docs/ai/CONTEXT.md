@@ -361,6 +361,7 @@ README must include:
 - Troubleshooting
 - Security notes
 - License (Apache 2.0)
+- Documentation must be updated when features/functionality is updated
 
 Operational tools must include docs/runbook.md.
 
