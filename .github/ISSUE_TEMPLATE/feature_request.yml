@@ -33,4 +33,3 @@ body:
       label: Constraints / Environment
     validations:
       required: false
-

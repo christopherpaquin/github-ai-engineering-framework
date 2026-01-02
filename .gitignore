@@ -1,0 +1,87 @@
+###############################################################################
+# AI Automation Template - .gitignore
+#
+# This file follows the standards defined in docs/ai/CONTEXT.md
+# Secrets, runtime artifacts, and generated files must never be committed.
+###############################################################################
+
+# ---------------------------------------------------------------------------
+# Environment variables / secrets
+# ---------------------------------------------------------------------------
+
+# Standard environment files
+.env
+.env.*
+!.env.example
+
+# Alternative env naming (supported, but discouraged in favor of .env)
+vars.env
+vars.env.*
+!vars.env.example
+
+# Generic secrets
+secrets.*
+*.secret
+*.secrets
+
+# Credential files
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+id_rsa
+id_ed25519
+
+# Cloud / tooling credentials
+.aws/
+.gcp/
+.azure/
+terraform.tfvars
+terraform.tfvars.json
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.env-venv/
+
+# ---------------------------------------------------------------------------
+# Pre-commit / tooling artifacts
+# ---------------------------------------------------------------------------
+
+# Local pre-commit caches (never commit)
+.pre-commit-cache/
+.precommit/
+
+# AI / lint / CI artifacts (generated)
+artifacts/
+*.log
+
+# ---------------------------------------------------------------------------
+# OS / editor noise
+# ---------------------------------------------------------------------------
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------------------------------------------------------------------------
+# Build / runtime output
+# ---------------------------------------------------------------------------
+
+dist/
+build/
+out/
+coverage/
