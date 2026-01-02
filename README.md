@@ -1,6 +1,6 @@
 # 🤖 GitHub AI Engineering Framework
 
-<img src="https://chrispaquin.com/wp-content/uploads/2026/01/Nobby-the-robot.png" alt="Nobby the Robot" width="50%">
+<img src="https://chrispaquin.com/wp-content/uploads/2026/01/Nobby-the-robot.png" alt="Nobby the Robot" width="50%" align="left">
 
 > A **governance-first** GitHub-centric framework for AI-assisted software
 > engineering with enforced standards, pre-commit, CI, and explicit operational
