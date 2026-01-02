@@ -170,6 +170,8 @@ Example:
 
 ## 9. Documentation Requirements
 
+### 9.1 README Structure
+
 README must include:
 - Overview
 - Include "tested on" shields [https://img.shields.io/]
@@ -184,6 +186,96 @@ README must include:
 - License (Apache 2.0)
 
 Operational tools must include docs/runbook.md.
+
+### 9.2 Documentation Visual Standards
+
+Documentation must be engaging, visually appealing, and easy to scan. The following
+standards ensure consistency and improve readability.
+
+#### 9.2.1 Visual Elements
+
+- **Emojis**: Use relevant emojis for section headers and visual indicators
+  - Examples: 🤖 for AI/automation, 🔒 for security, ✅ for success, ❌ for errors
+  - Use emojis consistently throughout the document
+  - Do not overuse emojis—aim for clarity, not clutter
+
+- **Status Indicators**: Use checkmarks and X marks to show status
+  - ✅ (checkmark) for positive states, included items, active features
+  - ❌ (X mark) for negative states, excluded items, prohibited actions
+  - ⚠️ (warning) for important cautions or best-effort items
+
+- **Checkboxes**: Use markdown checkboxes for interactive lists
+  - `- [ ]` for incomplete items
+  - `- [x]` for completed items
+  - Use in installation steps, troubleshooting checklists, and verification lists
+
+- **Tables**: Use tables to organize structured information
+  - Include status columns with visual indicators (✅/❌)
+  - Use tables for comparisons, feature lists, and configuration options
+  - Ensure tables are properly formatted and readable
+
+- **Badges/Shields**: Use shields.io badges for key information
+  - License, version, tested platforms, security status
+  - Keep badges at the top of the README for visibility
+
+#### 9.2.2 ASCII Diagrams
+
+ASCII diagrams must be properly formatted with consistent spacing:
+
+- Use consistent box-drawing characters (┌, ┐, └, ┘, ├, ┤, ┬, ┴, │, ─)
+- Ensure proper alignment and spacing between elements
+- Include emojis or symbols within diagram boxes for visual clarity
+- Maintain consistent width across diagram elements
+- Add blank lines before and after diagrams for readability
+
+#### 9.2.3 Color and Formatting
+
+- **Bold text**: Use for emphasis on important terms, file names, and key concepts
+- **Code blocks**: Use appropriate language tags for syntax highlighting
+- **Blockquotes**: Use `>` for important notes, warnings, or callouts
+- **Horizontal rules**: Use `---` to separate major sections
+
+#### 9.2.4 Lists and Checklists
+
+- Use numbered lists for sequential steps (installation, configuration)
+- Use bullet lists for feature lists, requirements, or non-sequential items
+- Use checkboxes for interactive verification lists
+- Include status indicators (✅/❌) in lists when showing feature status
+
+#### 9.2.5 Table of Contents
+
+- Include a table of contents with emoji indicators for major sections
+- Use anchor links for easy navigation
+- Keep the table of contents updated as the document evolves
+
+#### 9.2.6 Section Headers
+
+- Use emojis in section headers for visual identification
+- Maintain consistent emoji usage across similar section types
+- Examples:
+  - 📋 for lists/contents
+  - 🎯 for overviews
+  - ⚙️ for configuration/operations
+  - 🛡️ for security
+  - 📚 for documentation
+  - 🚀 for installation/deployment
+
+#### 9.2.7 Code Examples
+
+- Always include language tags in code fences
+- Use comments to explain complex code
+- Include expected output or results when relevant
+- Format code blocks with proper indentation
+
+#### 9.2.8 Visual Hierarchy
+
+- Use appropriate heading levels (H1 for title, H2 for major sections, H3 for subsections)
+- Maintain consistent spacing between sections
+- Use visual separators (horizontal rules) between major sections
+- Group related information together with consistent formatting
+
+All documentation should follow these visual standards to ensure consistency,
+readability, and engagement across all projects using this template.
 
 ---
 
