@@ -56,7 +56,8 @@ jobs:
       - name: OSV-Scanner
         uses: google/osv-scanner-action@v2.3.1
         with:
-          scan-args: |-
+          # Pass flags exactly as you would to the osv-scanner CLI
+          args: |-
             -r .
             --format json
             --output osv-results.json
