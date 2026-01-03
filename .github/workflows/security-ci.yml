@@ -22,8 +22,6 @@ jobs:
 
       - name: Run Gitleaks
         uses: gitleaks/gitleaks-action@v2
-        # By default, fails the job when leaks are found
-        # This complements detect-secrets.sh in pre-commit
 
   semgrep:
     name: SAST (Semgrep CE)
@@ -42,7 +40,7 @@ jobs:
 
       - name: Upload SARIF to GitHub Security
         uses: github/codeql-action/upload-sarif@v3
-        if: always() # Upload even if Semgrep finds issues
+        if: always()
         with:
           sarif_file: semgrep.sarif
 
@@ -56,8 +54,7 @@ jobs:
       - name: OSV-Scanner
         uses: google/osv-scanner-action@v2.3.1
         with:
-          # Pass flags exactly as you would to the osv-scanner CLI
-          args: |-
+          scan-args: |-
             -r .
             --format json
             --output osv-results.json
