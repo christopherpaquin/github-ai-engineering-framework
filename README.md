@@ -349,13 +349,14 @@ cd <your-repo-name>
 ```bash
 pip install pre-commit
 pre-commit install
+pre-commit install --hook-type commit-msg
 ```
 
 **Verification Checklist**:
 
 - [ ] Pre-commit is installed
-- [ ] Pre-commit hooks are installed
-- [ ] Run `./scripts/run-precommit.sh` to verify setup
+- [ ] Pre-commit hooks are installed (both pre-commit and commit-msg)
+- [ ] Run `./template/scripts/run-precommit.sh` to verify setup
 
 ### Step 4: Populate Project-Specific Files
 

@@ -9,14 +9,12 @@ body:
       label: Problem Statement
     validations:
       required: true
-
   - type: textarea
     id: outcome
     attributes:
       label: Desired Outcome
     validations:
       required: true
-
   - type: textarea
     id: acceptance
     attributes:
@@ -26,7 +24,6 @@ body:
         - AC-2:
     validations:
       required: true
-
   - type: textarea
     id: constraints
     attributes:

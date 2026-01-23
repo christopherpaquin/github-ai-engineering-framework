@@ -16,7 +16,12 @@
 set -euo pipefail
 
 # Resolve repository root (works regardless of CWD)
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# Find the git root directory
+if git rev-parse --show-toplevel &> /dev/null; then
+  REPO_ROOT="$(git rev-parse --show-toplevel)"
+else
+  REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+fi
 
 ARTIFACTS_DIR="${REPO_ROOT}/artifacts"
 LOG_FILE="${ARTIFACTS_DIR}/pre-commit.log"
